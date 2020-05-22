@@ -1,0 +1,17 @@
+body{
+  margin:0px
+}
+.sugg-title{
+  font-size:14px;
+  font-weight: 500;
+}
+.sugg-channel{
+  font-size:12px;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-weight: 700;
+  color:gray
+}
+.search-box{
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
