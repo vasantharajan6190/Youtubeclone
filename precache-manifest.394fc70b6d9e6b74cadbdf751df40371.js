@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "214d74531b82726833b45692e60d3ca3",
+    "revision": "fbc801239e6236c8156a6793624b4d2c",
     "url": "/Youtubeclone/index.html"
   },
   {
-    "revision": "2545c243f4529c38eba6",
+    "revision": "2d022f30f46ae1ee43aa",
     "url": "/Youtubeclone/static/css/main.af778d35.chunk.css"
   },
   {
-    "revision": "4ac41b0fe7351a518fdf",
-    "url": "/Youtubeclone/static/js/2.a39d2c54.chunk.js"
+    "revision": "bf87b761df09bb6567ff",
+    "url": "/Youtubeclone/static/js/2.8e71d676.chunk.js"
   },
   {
-    "revision": "be9831207da3d10befcd05d1ebb51a3a",
-    "url": "/Youtubeclone/static/js/2.a39d2c54.chunk.js.LICENSE.txt"
+    "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
+    "url": "/Youtubeclone/static/js/2.8e71d676.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2545c243f4529c38eba6",
-    "url": "/Youtubeclone/static/js/main.28dd08fa.chunk.js"
+    "revision": "2d022f30f46ae1ee43aa",
+    "url": "/Youtubeclone/static/js/main.302c30b7.chunk.js"
   },
   {
     "revision": "fbc591021f1121df9e91",
