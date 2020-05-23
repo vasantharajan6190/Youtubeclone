@@ -1,3 +1,7 @@
-module.exports={
-    apiKey:"AIzaSyD9Zbr63ZRhRsh9a3XevUpgVwosNHiinhs"
-}
+import axios from 'axios'
+
+export default axios.create({
+    baseURL:"https://www.googleapis.com/youtube/v3"
+})
+
+

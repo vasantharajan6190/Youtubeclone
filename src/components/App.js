@@ -11,7 +11,6 @@ function App() {
     event.preventDefault()
     setpassToChild(searchTerm)
   }
-
   return (
     <Container>
   <Row>
