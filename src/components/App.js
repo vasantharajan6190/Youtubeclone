@@ -17,13 +17,13 @@ function App() {
     <Col>
     <Form  onSubmit={e=>onsubmit(e)}>
   <Form.Row className="search-box">
-  <Col xs={3} md={2} style={{margin:"auto"}}>
+  <Col xs={4} md={2} style={{margin:"auto"}}>
   <img src={Logo} 
   alt="Youtube logo"
   width="100px"
   style={{margin:"auto"}}/>
   </Col>
-    <Col xs={6} md={7}>
+    <Col xs={5} md={7}>
     <Form.Control type="text" placeholder="Search video here..." 
     onChange={event=>setsearchTerm(event.target.value)}
     style={{flex:1}}
