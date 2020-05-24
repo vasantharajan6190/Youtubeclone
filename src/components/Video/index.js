@@ -3,8 +3,8 @@ import Suggestions from "./suggestions"
 import Singlevideo from "./Singlevideo"
 import {Col,ListGroup} from "react-bootstrap"
 import config from"../../config"
+import Flatlist from "flatlist-react"
 export default({searchString})=>{
-    let load = true
     const [videoList,setvideoList] = useState([])
     const [id,setid] = useState("")
     const [title,settitle] = useState("")
@@ -15,7 +15,8 @@ export default({searchString})=>{
         const sample = await config.get('search',{
             params:{
             part:'snippet',
-            maxResults:15,
+            maxResults:1000,
+            nextPageToken: "CDIQAA",
             key:'AIzaSyC6UqwIY0Cge78sEuyZrP1wEKuSpYeAZJ4',
             q:searchString
         }
@@ -25,6 +26,7 @@ export default({searchString})=>{
                  seterror(true)
         }
         else{
+            console.log(sample)
             setselectedVideo(result[0])
             setvideoList(result)
            setid(result[0].id.videoId)
@@ -53,9 +55,7 @@ export default({searchString})=>{
     <Col xs={12} lg={4}>
         {!error && <ListGroup>
         <p><strong>Suggestions</strong></p>
-        <Suggestions videoList={videoList} 
-        changeSelection={selectedVideoCallBack}
-        />
+        <Flatlist list={videoList} renderItem={<Suggestions videoList={videoList} changeSelection={selectedVideoCallBack}/>}/>
       {/* selectedVideoId={selectedVideo.id}
         
         <ListGroup.Item>Cras justo odio</ListGroup.Item>
@@ -65,7 +65,6 @@ export default({searchString})=>{
         <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
       */}
         </ListGroup>}
-   
     </Col>
    </React.Fragment>
     )
