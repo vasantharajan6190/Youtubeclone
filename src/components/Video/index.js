@@ -19,18 +19,17 @@ export default({searchString})=>{
             part:'snippet',
             maxResults:10,
             nextPageToken: "CDIQAA",
-            key:'AIzaSyC6UqwIY0Cge78sEuyZrP1wEKuSpYeAZJ4',
+            key:'AIzaSyAHBuxJ1_m91kWx2-pUAp4_zuF02T4wymk',
             q:searchString
         }
     })
-        const result=sample.data.items
+        const result= sample.data.items
         if(result.length===0){
                  seterror(true)
         }
         else{
-            console.log(sample)
-            setselectedVideo(result[0])
-            setvideoList(result.slice(0,5))
+         setselectedVideo(result[0])
+            setvideoList(result.slice(0,3))
            setid(result[0].id.videoId)
            settitle(result[0].snippet.title)
            setdes(result[0].snippet.description)
@@ -48,12 +47,12 @@ export default({searchString})=>{
             part:'snippet',
             maxResults:10,
             nextPageToken: "CDIQAA",
-            key:'AIzaSyC6UqwIY0Cge78sEuyZrP1wEKuSpYeAZJ4',
+            key:'AIzaSyAHBuxJ1_m91kWx2-pUAp4_zuF02T4wymk',
             q:searchString
         }
     })
         let result=sample.data.items
-        result = result.slice(0,5)
+        result = result.slice(0,4)
         setvideoList([...videoList,...result])
     }
     const selectedVideoCallBack = (videoDetail)=>{

@@ -6,7 +6,7 @@ import { Button,Container,Row,Col,Form} from 'react-bootstrap';
 function App() {
   const [searchTerm,setsearchTerm] = useState('')
   const [passToChild,setpassToChild] = useState("")
-  
+console.log("app")
   const onsubmit=(event)=>{
     event.preventDefault()
     setpassToChild(searchTerm)
