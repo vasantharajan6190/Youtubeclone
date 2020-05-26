@@ -3,7 +3,9 @@ import Suggestions from "./suggestions"
 import Singlevideo from "./Singlevideo"
 import {Col,ListGroup} from "react-bootstrap"
 import config from"../../config"
+import BottomScrollListener from 'react-bottom-scroll-listener';
 import Flatlist from "flatlist-react"
+let count=0
 export default({searchString})=>{
     const [videoList,setvideoList] = useState([])
     const [id,setid] = useState("")
@@ -15,7 +17,7 @@ export default({searchString})=>{
         const sample = await config.get('search',{
             params:{
             part:'snippet',
-            maxResults:1000,
+            maxResults:10,
             nextPageToken: "CDIQAA",
             key:'AIzaSyC6UqwIY0Cge78sEuyZrP1wEKuSpYeAZJ4',
             q:searchString
@@ -28,7 +30,7 @@ export default({searchString})=>{
         else{
             console.log(sample)
             setselectedVideo(result[0])
-            setvideoList(result)
+            setvideoList(result.slice(0,5))
            setid(result[0].id.videoId)
            settitle(result[0].snippet.title)
            setdes(result[0].snippet.description)
@@ -40,6 +42,20 @@ export default({searchString})=>{
     useEffect(()=>{
         callApi();
     },[searchString])
+    async function dis(){
+        const sample = await config.get('search',{
+            params:{
+            part:'snippet',
+            maxResults:10,
+            nextPageToken: "CDIQAA",
+            key:'AIzaSyC6UqwIY0Cge78sEuyZrP1wEKuSpYeAZJ4',
+            q:searchString
+        }
+    })
+        let result=sample.data.items
+        result = result.slice(0,5)
+        setvideoList([...videoList,...result])
+    }
     const selectedVideoCallBack = (videoDetail)=>{
           setselectedVideo(videoDetail)
           setid(videoDetail.id.videoId)
@@ -47,7 +63,8 @@ export default({searchString})=>{
    setdes(videoDetail.snippet.description)
     }
     return(
-    <React.Fragment>
+        <React.Fragment>
+        <BottomScrollListener onBottom={dis}>
     <Col xs={12} lg={8}>
      {error?<h1>Unable to find the related video</h1>:<Singlevideo detail={selectedVideo} description={description} title={title} id ={id}/>}
    
@@ -66,6 +83,7 @@ export default({searchString})=>{
       */}
         </ListGroup>}
     </Col>
+   </BottomScrollListener>
    </React.Fragment>
     )
 }

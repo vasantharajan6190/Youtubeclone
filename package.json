@@ -11,6 +11,7 @@
     "flatlist-react": "^1.4.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
+    "react-bottom-scroll-listener": "^4.0.0",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
